@@ -3,6 +3,7 @@
 //import 'package:doglife/pages/signup.page.dart';
 import 'package:flutter/material.dart';
 import 'home.page.dart';
+import 'package:flutter_app_teste/CriarContaPage.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -176,7 +177,7 @@ class LoginPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      //builder: (context) => SignupPage(),
+                      builder: (context) => CriarContaPage(),
                     ),
                   );
                 },

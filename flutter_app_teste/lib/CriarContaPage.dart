@@ -23,9 +23,6 @@ class _CriarContaPage extends State<CriarContaPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       resizeToAvoidBottomPadding: false,
-      appBar: new AppBar(
-        title: new Text('Fundamentados'),
-      ),
       body: new Container(
           padding: EdgeInsets.all(16.0),
           child: new Form(
@@ -33,6 +30,14 @@ class _CriarContaPage extends State<CriarContaPage> {
             child: new Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+                new SizedBox(
+                  width: 128.0,
+                  height: 128.0,
+                  child: Image.asset("assets/images/logo_fnd2.png"),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
                 new TextFormField(
                   decoration: new InputDecoration(labelText: 'Nome'),
                   validator: (value) =>
@@ -46,9 +51,10 @@ class _CriarContaPage extends State<CriarContaPage> {
                   onSaved: (value) => _sobrenome = value,
                 ),
                 new TextFormField(
-                  decoration: new InputDecoration(labelText: 'Sobrenome'),
+                  decoration: new InputDecoration(labelText: 'e-mail'),
+                  keyboardType: TextInputType.emailAddress,
                   validator: (value) =>
-                  value.isEmpty ? 'O Sobrenome é obrigatório' : null,
+                  value.isEmpty ? 'O E-mail é obrigatório' : null,
                   onSaved: (value) => _sobrenome = value,
                 ),
                 new TextFormField(
@@ -59,17 +65,11 @@ class _CriarContaPage extends State<CriarContaPage> {
                   onSaved: (value) => _password = value,
                 ),
                 new RaisedButton(
-                  child: new Text('Entrar',
+                  child: new Text('Criar Conta',
                       style: new TextStyle(
                           fontSize: 20.0, fontFamily: 'RobotoMono')),
-
                 ),
-                new MaterialButton(
-                  child: new Text('Novo Usuário ? Crie sua conta aqui.',
-                      style: new TextStyle(fontSize: 20.0)),
-                  textColor: Colors.green,
 
-                ),
               ],
             ),
           )),
